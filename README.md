@@ -1,6 +1,9 @@
 ## Netflix Clone
 
-> A Netflix clone made using Next.js
+> A simple video streaming platform demo inspired by Netflix made using Next.js.
+
+### API
+https://developers.themoviedb.org/3/getting-started/introduction
 
 ## Screenshots
 
@@ -30,3 +33,4 @@ npm install
 
 Running locally :  ``npm run dev``
 
+Open http://localhost:3000 with your browser to see the result.
