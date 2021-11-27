@@ -25,11 +25,20 @@ const NavbarContainer = styled.div`
 const Logo = styled.div`
     cursor: pointer;
     margin-left: 5rem;
-    font-size: 3rem;
+    font-size: 2rem;
     letter-spacing: 0.1rem;
     font-weight: 500;
     font-family: 'Outfit';
     font-color: ${p => p.theme.white};
+
+    @media(max-width: 712px) {
+        margin-left: 2rem;
+    }
+
+    @media(max-width: 458px){
+        margin-left: 1rem;
+        font-size: 2rem;
+    }
 `;
 
 const Icon = styled.a`
@@ -38,6 +47,15 @@ const Icon = styled.a`
     margin-right: 5rem;
     cursor: pointer;
     display: flex;
+
+    @media(max-width: 712px) {
+        margin-right: 2rem;
+    }
+
+    @media(max-width: 458px){
+        margin-right: 1rem;
+        font-size: 2rem;
+    }
 `;
 
 const SVG = styled.svg`

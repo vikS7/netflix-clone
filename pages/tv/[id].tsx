@@ -13,7 +13,7 @@ interface ITvDetails {
 }
 
 const Wrapper = styled.div`
-    
+    width: 100%;
 `;
 
 const WrapperSlider = styled.div`

@@ -36,9 +36,15 @@ export default class MyDocument extends Document {
                     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Outfit:wght@200;300;400;500;700&display=swap" rel="stylesheet" />
                 </Head>
                 <body>
-                    <Main />
-                    <NextScript />
+                    <div className="unsupported">
+                        <h1>We dont support this resolution yet.</h1>
+                    </div>
+                    <div className="main">
+                        <Main />
+                        <NextScript />
+                    </div>
                 </body>
+                
             </Html>
         );
     }

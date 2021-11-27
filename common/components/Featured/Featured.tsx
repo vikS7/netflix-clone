@@ -13,12 +13,18 @@ const Wrapper = styled.div`
 `;
 
 const WrapperContent = styled.div`
-    margin: 0 3rem;
+    margin: 0 5rem;
     max-width: 150rem;
     width: 30rem;
-    margin-right: auto;
-    margin-left: 5rem;
     font-family: 'Outfit';
+
+    @media(max-width: 712px){
+        margin: 0 2rem;
+    }
+
+    @media(max-width: 458px){
+        margin: 0 1rem;
+    }
 `;
 
 const WrapperBackground = styled.div`

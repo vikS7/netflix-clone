@@ -31,7 +31,7 @@ const WrapperBackground = styled.div`
 `;
 
 const ShowContent = styled.div`
-    width: 70rem;
+    max-width: 70rem;
     min-width: 50rem;
     height: 100%;
     padding-top: 30rem;
@@ -77,6 +77,7 @@ const ContentOverview = styled.div`
     margin-top: 15px;
     font-size: 1.1rem;
     font-weight: 200;
+    max-width: 60rem;
 `;
 
 const ShowBanner: React.FC<IShowDetails> = ({show}) => {

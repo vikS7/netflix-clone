@@ -11,7 +11,7 @@ interface IMovieDetails {
 }
 
 const Wrapper = styled.div`
-    
+    width: 100%;
 `;
 
 const MovieDetail: React.FC<IMovieDetails> = ({movie, suggestions}) => {

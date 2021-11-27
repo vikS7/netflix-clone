@@ -12,6 +12,15 @@ interface IShow {
 
 const BlockWrapper = styled.div`
     margin: 5rem;
+
+    @media(max-width: 712px) {
+        margin-right: 2rem;
+    }
+
+    @media(max-width: 458px){
+        margin-right: 1rem;
+    }
+
 `;
 
 const BlockTitle = styled.div`
@@ -19,6 +28,11 @@ const BlockTitle = styled.div`
     font-family: 'Outfit';
     font-size: 2rem;
     margin-bottom: 0.5rem;
+
+    @media(max-width: 712px) {
+        font-size: 1.8rem;
+    }
+
 `;
 
 const ShowBlock: React.FC<IShow> = ({shows, title}) => {

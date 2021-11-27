@@ -22,7 +22,24 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${p => p.theme.gray50};
         color: ${p => p.theme.gray900};
     }
+
+    @media(max-width: 800px){
+        .main{
+            display: none;
+        }
+
+        .unsupported{
+            display: block;
+        }
+    }
     
+    .unsupported{
+        display: none;
+        color: white;
+        height: 100%;
+        width: 100%;
+    }
+
     .no-scroll {
       overflow: hidden;
     }
@@ -80,7 +97,6 @@ export const CardOverview = styled.div`
 export const CardWrapper= styled.div`
     height: 17rem;
     position: relative;
-    min-width: 8rem;
     max-width: 12rem;
     transition: transform ease-in 0.2s;
     &:hover{
@@ -92,10 +108,5 @@ export const CardWrapper= styled.div`
             opacity: 1;
         }
         transform: translate3d(0, -0.5rem, 0);
-    }
-
-    @media( min-width: 980){
-        width: 5rem;
-        border: 1px solid white;
     }
 `;
