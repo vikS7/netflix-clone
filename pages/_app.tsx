@@ -6,10 +6,12 @@ import { GlobalStyle } from '../common/styles/globalStyles';
 import Navbar from '../common/components/Navbar/Navbar';
 import { ModalProvider  } from '../common/hooks/useModal';
 import SeasonModal from '../common/components/SeasonModal/SeasonModal';
+import NextNProgress from 'nextjs-progressbar';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <ThemeProvider theme={theme}>
           <ModalProvider>
+          <NextNProgress  color="red" />
             <GlobalStyle />
             <Navbar />
             <Component {...pageProps} />
