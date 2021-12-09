@@ -1,10 +1,12 @@
 import type { GetServerSideProps, GetStaticProps, NextPage } from 'next'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import SeasonSlider from '../../common/components/SeasonSlider/SeasonSlider';
 import ShowBanner from '../../common/components/ShowBanner/ShowBanner';
 import ShowBlock from '../../common/components/ShowBlock/ShowBlock';
+import VideoBlock from '../../common/components/VideoBlock/VideoBlock';
 import { getSimilarTvShows, getTvById, getTvSeasons } from '../../common/utils/api/api';
+import { _getTrailers } from '../../common/utils/helper';
 import { API } from '../../common/utils/types/api';
 
 interface ITvDetails {
@@ -39,9 +41,20 @@ const SelectWrapper = styled.div`
 
 const TvDetails: React.FC<ITvDetails> = ({tv, suggestions}) => {
     
+    const [trailers, setTrailers] = useState<API.Video[]>();
+
+    useEffect(() => {
+        let videos = _getTrailers(tv.videos!);
+        if(!!videos.length){
+            setTrailers(videos);
+            
+        }
+    }, [tv]);
+
     return(
         <Wrapper>
             <ShowBanner show={tv} />
+            {trailers && <VideoBlock videos={trailers} title={"Trailers"} />}
                 <WrapperSlider>
                     <WrapperHeader>
                         <WrapperTitle>

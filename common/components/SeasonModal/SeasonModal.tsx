@@ -106,9 +106,7 @@ const SeasonModal = () => {
     if(!modal.season){
         return null;
     }
-
-    console.log(modal.season);
-
+    
     return(
         <ModalWrapper>
             <ModalContent>

@@ -34,6 +34,7 @@ export declare module API{
         tagline: string | null;
         genres: Genre[];
         seasons?: Season[];
+        videos?: VideoResults;
     }
 
     interface Genre {
@@ -76,5 +77,22 @@ export declare module API{
         still_path: string;
         vote_count: number;
         vote_average: number;
+    }
+
+    interface VideoResults {
+        results: Video[];
+    }
+
+    interface Video{
+        name: string;
+        key: string;
+        site: string;
+        size: number;
+        type: string;
+        official: boolean;
+        published_at: string;
+        id: string;
+        thumbnail_url: string;
+        url: string;
     }
 }

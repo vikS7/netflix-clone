@@ -1,4 +1,5 @@
 import {tmbdConfig} from './api/config';
+import { API } from './types/api';
 
 export const _getPosterURL = (backdrop_path: String, size: String = "w500") => {
     return `${tmbdConfig.imageHost}/${size}${backdrop_path}`;
@@ -9,6 +10,20 @@ export const recordArrayToRecord = (arr: Record<any, any>[]): Record<any, any> =
         return { ...map, ...results };
     }, {});
 };
+
+export const _getTrailers = ({results} : API.VideoResults) => {
+  return results.filter((obj : API.Video) => {
+      return obj.type == "Trailer";
+  }); 
+}
+
+export const _getThumbnailUrl = (key: string) => {
+  return `https://i.ytimg.com/vi/${key}/maxresdefault.jpg`;
+}
+
+export const _getTrailerUrl = (key: string) => {
+  return `https://www.youtube.com/watch?v=${key}`;
+}
 
 export const responsive = {
     desktop: {

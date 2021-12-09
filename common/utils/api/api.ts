@@ -13,12 +13,12 @@ export const getTrendingAll = async (): Promise<API.Show[]> => {
 }
 
 export const getMovieById = async (id: any): Promise<API.ShowDetails> => {
-    const results = await db<API.ShowDetails>(`movie/${id}`);
+    const results = await db<API.ShowDetails>(`movie/${id}`, "&append_to_response=videos");
     return results;
 }
 
 export const getTvById = async (id: string): Promise<API.ShowDetails> => {
-    const results = await db<API.ShowDetails>(`tv/${id}`);
+    const results = await db<API.ShowDetails>(`tv/${id}`, "&append_to_response=videos");
     return results;
 }
 
