@@ -13,9 +13,6 @@ import ShowGrid from '@base/components/show-grid';
 
 type Props = {};
 
-export const metadata = {
-    title: 'Movie.io - Search',
-};
 
 const SearchPage = (props: Props) => {
     const [query, setQuery] = useState('');
