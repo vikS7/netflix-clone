@@ -1,17 +1,15 @@
-
-import React from 'react';
+import Link from 'next/link';
+import React, { Fragment } from 'react';
 
 type Props = {
     children: React.ReactNode;
-    onClick?: () => void;
+    href?: string;
 };
 
-const CardWrapper = ({ children, onClick }: Props) => {
+const CardWrapper = ({ children, href }: Props) => {
     return (
-        <div
-            onClick={onClick}
-            className="group relative h-[12rem] w-[9rem] cursor-pointer overflow-hidden rounded-md sm-md:h-[14rem] sm-md:w-[10rem] md:h-[17rem] md:w-[12rem]">
-            {children}
+        <div className="group relative h-[12rem] w-[9rem] cursor-pointer overflow-hidden rounded-md sm-md:h-[14rem] sm-md:w-[10rem] md:h-[17rem] md:w-[12rem]">
+            {href ? <Link className='w-full h-full' href={href}>{children}</Link> : <Fragment>{children}</Fragment>}
         </div>
     );
 };

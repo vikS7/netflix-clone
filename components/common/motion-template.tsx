@@ -6,4 +6,6 @@ export const MotionDiv = motion.div;
 
 export const MotionButton = motion.button;
 
+export const MotionA = motion.a;
+
 export const AnimatePresenceClient = AnimatePresence;

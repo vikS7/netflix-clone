@@ -3,6 +3,7 @@ import { MotionDiv } from '../common/motion-template';
 import { API } from '@base/types';
 import { formatDate } from '@base/lib/helpers';
 import { Star } from '../common/icons';
+import Link from 'next/link';
 
 type Props = {
     title: string;
@@ -12,8 +13,7 @@ type Props = {
     genres?: API.Genre[];
     children?: React.ReactNode;
     trailerUrl?: string;
-
-    onTitleClick?: React.MouseEventHandler;
+    href?: string;
 };
 
 const fadeInUp = {
@@ -38,7 +38,7 @@ const fadeInUp = {
 const fadeIn = {
     hidden: { opacity: 0 },
     show: { opacity: 1 },
-    exit: {opacity: 0}
+    exit: { opacity: 0 },
 };
 
 const BannerDetails = ({
@@ -48,22 +48,34 @@ const BannerDetails = ({
     vote_average,
     genres,
     children,
-    onTitleClick,
+    href,
 }: Props) => {
     return (
         <MotionDiv className="mx-4 max-w-[25rem] px-3 text-white sm-md:mx-3 sm-md:max-w-[35rem] md:mx-8 md:max-w-[50rem] md:px-2">
             <MotionDiv
-                onClick={onTitleClick}
                 variants={fadeInUp}
                 key={'bannerHeading'}
                 initial="hidden"
                 animate="show"
                 exit="exit"
                 className="cursor-pointer text-3xl font-extrabold text-inherit hover:text-primary md:text-4xl">
-                {title}
+                {href ? <Link href={href}>{title}</Link> : <React.Fragment>{title}</React.Fragment>}
             </MotionDiv>
-            <MotionDiv variants={fadeIn} key={'bannerOverview'} initial='hidden' animate='show' exit='exit' className="mt-5 text-inherit">{overview}</MotionDiv>
-            <MotionDiv variants={fadeIn} key={'bannerDetails'} initial='hidden' animate='show' exit='exit'>
+            <MotionDiv
+                variants={fadeIn}
+                key={'bannerOverview'}
+                initial="hidden"
+                animate="show"
+                exit="exit"
+                className="mt-5 text-inherit">
+                {overview}
+            </MotionDiv>
+            <MotionDiv
+                variants={fadeIn}
+                key={'bannerDetails'}
+                initial="hidden"
+                animate="show"
+                exit="exit">
                 <div className="mt-5 flex flex-col items-start text-sm text-slate-300 sm-md:text-base md:flex-row md:flex-wrap md:items-center md:space-x-2 md:text-slate-100">
                     <span className="flex items-center">
                         <Star size="18" />
@@ -98,7 +110,17 @@ const BannerDetails = ({
                     <span className="">{formatDate(release_date)}</span>
                 </div>
             </MotionDiv>
-            {children && <MotionDiv variants={fadeIn} key={'bannerChildren'} initial='hidden' animate='show' exit='exit' className="mt-5">{children}</MotionDiv>}
+            {children && (
+                <MotionDiv
+                    variants={fadeIn}
+                    key={'bannerChildren'}
+                    initial="hidden"
+                    animate="show"
+                    exit="exit"
+                    className="mt-5">
+                    {children}
+                </MotionDiv>
+            )}
         </MotionDiv>
     );
 };
