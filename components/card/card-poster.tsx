@@ -28,6 +28,7 @@ const CardPoster = ({ src, alt, fallback = '/fallback-poster.png' }: Props) => {
                 onLoadingComplete={() => setIsLoaded(true)}
                 onError={() => setImgSource(fallback)}
                 sizes="50vw"
+                quality={80}
                 className="h-full w-full min-w-[100%] object-cover transition-transform group-hover:scale-110"
             />
         </div>

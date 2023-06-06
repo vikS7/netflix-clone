@@ -53,7 +53,7 @@ const SearchPage = (props: Props) => {
                 <SearchBar isLoading={isLoading} onSubmit={handleSubmit} />
             </div>
             <ShowGrid title={query}>
-                {(show.length === 0 && !isLoading) && <h1>No Results</h1>}
+                {(show.length === 0 && !isLoading && query) && <h1>No Results</h1>}
                 {show.length &&
                     !isLoading &&
                     show.map((show, i) => (
