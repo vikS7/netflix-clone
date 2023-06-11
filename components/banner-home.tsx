@@ -12,7 +12,6 @@ const HomeBanner = ({ show }: Props) => {
     return (
         <BannerWrapper>
             <BannerDetails
-                // onTitleClick={onTitleClick}
                 title={show.original_title ?? show.name}
                 href={`${show.media_type == 'movie' ? 'movie' : 'tv'}/${show.id}`}
                 {...show}

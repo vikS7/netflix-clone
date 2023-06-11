@@ -16,9 +16,9 @@ const MovieBanner = ({ movie }: Props) => {
     return (
         <BannerWrapper>
             <BannerDetails title={movie.original_title ?? movie.name} {...movie}>
-                <div className="my-3 flex flex-col min-[500px]:flex-row min-[500px]:items-center min-[500px]:space-x-2">
+                <div className="my-3 flex flex-col sm-md:flex-row sm-md:items-center sm-md:space-x-2">
                     {trailerUrl && (
-                        <Button intent="translucent" className='mb-2 min-[500px]:mb-0' size="medium" rounded="large">
+                        <Button intent="translucent" className='mb-2 sm-md:mb-0' size="medium" rounded="large">
                             <a href={trailerUrl} target="_blank">
                                 Play Trailer
                             </a>

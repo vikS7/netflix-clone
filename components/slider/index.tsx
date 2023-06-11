@@ -24,7 +24,7 @@ const Slider = ({ children, title, href}: Props) => {
                     exit={{opacity: 0}}
                     className="mb-3  flex items-center">
                     <span className='text-xl md:text-2xl cursor-default'>{title}</span>
-                    {href && <a href={href} className='group-hover/title:opacity-100 opacity-0 text-blue-500 transition-opacity md:text-base text-sm ml-4'> {'Show all >>'} </a>}
+                    {href && <a href={href} className='md:group-hover/title:opacity-100 md:opacity-0 opacity-100 text-blue-500 transition-opacity md:text-base text-sm ml-4'> {'Show all >>'} </a>}
                 </MotionDiv>
             )}
             <Carousel>

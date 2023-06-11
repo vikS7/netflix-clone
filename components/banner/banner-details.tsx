@@ -67,8 +67,8 @@ const BannerDetails = ({
                 initial="hidden"
                 animate="show"
                 exit="exit"
-                className="mt-5 text-inherit">
-                {overview}
+                className="mt-5 text-inherit h-[60%]">
+                {overview.substring(0, 500)}
             </MotionDiv>
             <MotionDiv
                 variants={fadeIn}
